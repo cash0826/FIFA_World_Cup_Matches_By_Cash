@@ -1,8 +1,8 @@
 
 //// Dotenv for API Key:
-//// Install dotenv package: `npm install dotenv`
-//// add .env file to project root to store environment variables locally
-//// Load environment variables from .env file
+//// Installed dotenv package: `npm install dotenv`
+//// Added .env file to project root to store environment variables locally
+//// Loaded environment variables from .env file:
 import 'dotenv/config.js'
 
 // Base API URL
