@@ -2,8 +2,9 @@ import { useState } from 'react'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import './App.css'
 import Home from "./pages/Home"
-import MatchesContainer from "./pages/MatchesContainer"
-import About from "/pages/About"
+import MatchesList from "./pages/MatchesList"
+import MatchesCard from "./pages/MatchesCard"
+import About from "./pages/About"
 import MatchesTomorrow from "./pages/MatchesTomorrow"
 import Search from "./pages/Search"
 import MatchesByDate from "./pages/MatchesByDate"
@@ -16,8 +17,9 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={< Home />} > 
-            <Route path="" element={< MatchesContainer />} />
+          <Route path="/" element={< Home />} >
+            <Route path="" element={< MatchesList />} >
+          </Route>
           </Route>
           <Route path="/about" element={< About />} /> 
           <Route path="/matchesTomorrow" element={< MatchesTomorrow />} />
