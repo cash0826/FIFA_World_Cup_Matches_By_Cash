@@ -1,12 +1,13 @@
-import { NavLink } from "react-router-dom"
+import { NavLink } from "react-router-dom";
+import "./NavBar.css";
 
 function NavBar() {
   return (
     <nav className="navbar">
-      <btn>
-        <NavLink to="/">Home</NavLink>
-      </btn>
-      <h1>These are the 2026 FIFA World Cup Matches!⚽ </h1>
+      <button>
+        <NavLink to="/">⚽</NavLink>
+      </button>
+      <h2>FIFA World Cup Matches 2026🥅</h2>
     </nav>
   )
 }
