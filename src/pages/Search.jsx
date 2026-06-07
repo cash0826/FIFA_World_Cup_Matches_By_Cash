@@ -32,12 +32,16 @@ function Search() {
       });
   }
 
+  // Separate formatter function to display after a search
+  const formattedDate = searchedDate ? formatDisplayDate(searchedDate) : "" ;
+
   // Search function
   async function handleSubmit(e) {
     e.preventDefault();
 
     setSearchedDate(query)
 
+    // Log user input
     console.log(query)
 
     // Await the API Fetch
@@ -71,7 +75,7 @@ function Search() {
     
     <main>
       {
-        searchedDate
+        formattedDate
         ? <h2>Matches for {formatDisplayDate(searchedDate)} </h2>
         : null 
       }
