@@ -1,10 +1,7 @@
-
-//// Dotenv for API Key:
-//// Installed dotenv package: `npm install dotenv`
 //// Added .env file to project root to store environment variables locally
 //// Loaded environment variables from .env file:
 
-// Base API URL
+// Base API URL (SportsAPI)
 const baseURL = 'https://sportapi7.p.rapidapi.com/api/v1/sport/football/scheduled-events';
 
 // API Key
@@ -17,13 +14,12 @@ const apiKey = import.meta.env.VITE_RAPIDAPI_KEY;
 
 // 'Today' with YYYY-MM-DD format
 const today = new Date().toISOString().split("T")[0];
-//  
 
 // GET Matches by given date (date to pass as parameter)
 export async function getMatches(date) {
   const url = `${baseURL}/${date}`
-  console.log(url)
 
+  // Only run if a formatted date is provided
   if (date) {
     const response = await fetch(url, {
       method: "GET",
@@ -56,6 +52,4 @@ export async function getMatches(date) {
     throw new Error(`Error fetching matches: ${response.statusText}`);
     return null
   }
-
-
 }
