@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
-import { Outlet } from "react-router-dom"
 import { getMatches } from "../services/GetMatchesJSON"
 import NavBar from "../components/NavBar"
+import MatchGrid from "../components/MatchGrid"
 
 function MatchesTomorrow() {
   // Tomorrow's Date
@@ -13,7 +13,7 @@ function MatchesTomorrow() {
   const [matchesTomorrow, setMatchesTomorrow] = useState([])
 
   useEffect( () => {
-    // using getMatches from JSON file for now
+    // using getMatches from JSON file for now (add tomorrowFormatted parameter when complete)
     getMatches()
       .then( (data) => setMatchesTomorrow(data))
       .catch( (error) => console.log("Error fetching matches for tomorrow: ", error))
@@ -25,7 +25,9 @@ function MatchesTomorrow() {
     <NavBar/>
     <main>
       <h2>Matches for tomorrow:</h2>
-      <Outlet context={{ matchesTomorrow, setMatchesTomorrow}  } />
+      <div>
+        <MatchGrid matches={matchesTomorrow}/>
+      </div>
     </main>
     </>
   )

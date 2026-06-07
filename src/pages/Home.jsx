@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { Outlet } from "react-router-dom"
+import { Outlet, Link } from "react-router-dom"
 import { getMatches } from "../services/GetMatchesJSON"
 import NavBar from "../components/NavBar"
 
@@ -26,6 +26,10 @@ function Home() {
       <h2>Matches for today:</h2>
       <Outlet context= { {matches, setMatches} }/>
     </main>
+    <footer>
+      <div><Link to="/tomorrow">View Matches for Tomorrow</Link></div>
+      <div><Link to="/search">Search Matches by Date</Link></div>
+    </footer>
     </>
   )
 }

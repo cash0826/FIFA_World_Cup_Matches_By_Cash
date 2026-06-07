@@ -1,5 +1,4 @@
-import { Link, useOutletContext } from "react-router-dom"
-import MatchCard from "../components/MatchCard"
+import { useOutletContext } from "react-router-dom"
 import MatchGrid from "../components/MatchGrid"
 
 function MatchesToday() {
@@ -14,10 +13,6 @@ function MatchesToday() {
     <div>
       <MatchGrid matches={matches}/>
     </div>
-    <footer>
-      <div><Link to="/MatchesTomorrow">View Matches for Tomorrow</Link></div>
-      <div><Link to="/Search">Search Matches by Date</Link></div>
-    </footer>
     </>
   )
 }

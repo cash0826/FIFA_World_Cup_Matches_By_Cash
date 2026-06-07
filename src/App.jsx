@@ -18,9 +18,9 @@ function App() {
         <Routes>
           <Route path="/" element={< Home />} >
             <Route index element={<MatchesToday />} />
-            <Route path="tomorrow" element={<MatchesTomorrow/>}/>
-            <Route path="search" element={< Search />} />
           </Route>
+          <Route path="/tomorrow" element={<MatchesTomorrow/>}/>
+          <Route path="/search" element={< Search />} />        
           <Route path="/about" element={< About />} /> 
           <Route path="/standings" element={< Standings />} />
           <Route path="*" element={< NotFound />}/>
