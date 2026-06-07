@@ -1,6 +1,6 @@
 import MatchCard from "../components/MatchCard"
 
-function MatchGrid( {matches} ) {
+function MatchGrid( { matches } ) {
 
   return (
     <div>

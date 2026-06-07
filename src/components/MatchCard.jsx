@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-function MatchCard({ match })  {
+function MatchCard( { match } )  {
 
   return(
     <>
