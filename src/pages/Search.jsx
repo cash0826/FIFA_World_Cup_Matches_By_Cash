@@ -19,7 +19,20 @@ function Search() {
     inputRef.current.focus();
   }, []); 
 
-  // Search
+  // Format Display Date
+  function formatDisplayDate(dateString) {
+
+    // Adding T00:00:00 creates a local midnight date and avoid timezone differences from UTC
+    return new Date(`${dateString}T00:00:00`)
+      .toLocaleDateString("en-US", {
+        weekday: "long",
+        month: "long",
+        day: "numeric",
+        year: "numeric",
+      });
+  }
+
+  // Search function
   async function handleSubmit(e) {
     e.preventDefault();
 
@@ -59,13 +72,14 @@ function Search() {
     <main>
       {
         searchedDate
-        ? <h2>Matches for {searchedDate} </h2>
+        ? <h2>Matches for {formatDisplayDate(searchedDate)} </h2>
         : null 
       }
       <div>
         <MatchGrid matches={matchesBySearch}/>
       </div>
     </main>
+
     </>
   )
 }
