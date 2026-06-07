@@ -13,3 +13,5 @@ function MatchGrid( {matches} ) {
     </div>
   )
 }
+
+export default MatchGrid;

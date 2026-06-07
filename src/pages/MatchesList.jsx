@@ -1,5 +1,6 @@
 import { Link, useOutletContext } from "react-router-dom"
 import MatchCard from "../components/MatchCard"
+import MatchGrid from "../components/MatchGrid"
 
 function MatchesList() {
   const { matches, setMatches} = useOutletContext();
@@ -8,18 +9,10 @@ function MatchesList() {
     return <p>Loading Events...</p>
   }
 
-  // Creates MatchCard and passes match as prop
-  const cards = matches.map(match => (
-    <MatchCard 
-      key={match.id}
-      match={match}
-    />
-  ))
-
   return(
     <>
     <div>
-      {cards}
+      <MatchGrid matches={matches}/>
     </div>
     <footer>
       <div><Link to="/MatchesTomorrow">View Matches for Tomorrow</Link></div>
