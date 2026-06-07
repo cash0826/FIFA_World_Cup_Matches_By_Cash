@@ -2,7 +2,7 @@ import { Link, useOutletContext } from "react-router-dom"
 import MatchCard from "../components/MatchCard"
 import MatchGrid from "../components/MatchGrid"
 
-function MatchesList() {
+function MatchesToday() {
   const { matches, setMatches} = useOutletContext();
 
   if (matches.length === 0){
@@ -22,4 +22,4 @@ function MatchesList() {
   )
 }
 
-export default MatchesList;
+export default MatchesToday;
