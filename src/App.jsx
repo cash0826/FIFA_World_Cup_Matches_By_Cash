@@ -18,12 +18,10 @@ function App() {
         <Routes>
           <Route path="/" element={< Home />} >
             <Route index element={<MatchesList />} />
+            <Route path="tomorrow" element={<MatchesTomorrow/>}/>
+            <Route path="search" element={< Search />} />
           </Route>
           <Route path="/about" element={< About />} /> 
-          <Route path="/matchesTomorrow" element={< MatchesTomorrow />} />
-          <Route path="/search" element={< Search />} >
-            <Route path="" element= {< MatchesByDate />} />
-          </Route>
           <Route path="/standings" element={< Standings />} />
           <Route path="*" element={< NotFound />}/>
         </Routes>
