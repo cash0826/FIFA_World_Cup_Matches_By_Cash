@@ -1,27 +1,19 @@
-import { useEffect, useState } from "react"
-import { Link } from "react-router-dom"
-import { getMatches } from "../services/GetMatchesJSON"
+import { Link, useOutletContext } from "react-router-dom"
+import MatchCard from "../components/MatchCard"
 
 function MatchesList() {
-  const [matches, setMatches] = useState([]);
-
-  useEffect( () => {
-
-    // use getMatchesJSON for now (no date needed)
-    getMatches().then( (data) => {
-      setMatches(data)
-    }).catch( (error) => {
-      console.log("Error fetching matches: ", error)
-    });
-  }, []);
+  const { matches, setMatches} = useOutletContext();
 
   if (matches.length === 0){
     return <p>Loading Events...</p>
   }
+
+  // Creates MatchCard and passes match as prop
   const cards = matches.map(match => (
-    <div key={match.id} className="match-card">
-      <h3>{match.homeTeam} vs {match.awayTeam}</h3>
-    </div>
+    <MatchCard 
+      key={match.id}
+      match={match}
+    />
   ))
 
   return(
