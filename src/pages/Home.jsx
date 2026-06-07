@@ -29,6 +29,7 @@ function Home() {
     <footer>
       <div><Link to="/tomorrow">View Matches for Tomorrow</Link></div>
       <div><Link to="/search">Search Matches by Date</Link></div>
+      <div><Link to="/about">About FIFA World Cup 2026</Link></div>
     </footer>
     </>
   )
