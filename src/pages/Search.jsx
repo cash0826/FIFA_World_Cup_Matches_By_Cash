@@ -74,6 +74,7 @@ function Search() {
     </div>
     
     <main>
+      {/* Show heading after user input */}
       {
         formattedDate
         ? <h2>Matches for {formatDisplayDate(searchedDate)} </h2>
