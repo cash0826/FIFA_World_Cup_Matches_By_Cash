@@ -2,10 +2,17 @@ import { useState } from "react"
 
 function MatchCard( { match } )  {
 
+  // Format startTimestamp (UNIX) to display Local  Time
+  function formatTimeStamp(timeStamp) {
+    return new Date(timeStamp * 1000)
+      .toLocaleTimeString();
+  }
+
   return(
     <>
       <div className="match-card">
-        <h3>{match.homeTeam} vs {match.awayTeam}</h3>
+        <h3> Round {match.round} | {match.group} </h3>
+        <h4>{match.homeTeam} vs {match.awayTeam} at {formatTimeStamp(match.startTimestamp)} </h4>
       </div>
     </>
   )
