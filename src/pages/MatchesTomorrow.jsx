@@ -12,7 +12,7 @@ function MatchesTomorrow() {
     function tomorrow () {
       const tomorrow = new Date()
       tomorrow.setDate(tomorrow.getDate() + 1);
-      const tomorrowFormatted = tmrw.toISOString().split("T")[0];
+      const tomorrowFormatted = tomorrow.toISOString().split("T")[0];
       return tomorrowFormatted
     }
     // using getMatches from JSON file for now (add tomorrow() parameter when ready)
