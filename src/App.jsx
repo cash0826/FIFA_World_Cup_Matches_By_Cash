@@ -2,8 +2,7 @@ import { useState } from 'react'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import './App.css'
 import Home from "./pages/Home"
-import MatchesList from "./pages/MatchesList"
-import MatchesCard from "./pages/MatchesCard"
+import MatchesToday from "./pages/MatchesToday"
 import About from "./pages/About"
 import MatchesTomorrow from "./pages/MatchesTomorrow"
 import Search from "./pages/Search"
@@ -18,14 +17,11 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={< Home />} >
-            <Route path="" element={< MatchesList />} >
+            <Route index element={<MatchesToday />} />
           </Route>
-          </Route>
+          <Route path="/tomorrow" element={<MatchesTomorrow/>}/>
+          <Route path="/search" element={< Search />} />        
           <Route path="/about" element={< About />} /> 
-          <Route path="/matchesTomorrow" element={< MatchesTomorrow />} />
-          <Route path="/search" element={< Search />} >
-            <Route path="" element= {< MatchesByDate />} />
-          </Route>
           <Route path="/standings" element={< Standings />} />
           <Route path="*" element={< NotFound />}/>
         </Routes>
