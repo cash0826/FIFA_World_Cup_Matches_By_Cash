@@ -61,9 +61,10 @@ function Search() {
 
     <div>
       <form className="search-bar" onSubmit={handleSubmit}>
-        <label>Search by Date:</label>
+        <label htmlFor="search">Search by Date:</label>
         <input
           type="date"
+          id="search"
           required
           ref={inputRef}
           value={query}
@@ -74,6 +75,7 @@ function Search() {
     </div>
     
     <main>
+      {/* Show heading after user input */}
       {
         formattedDate
         ? <h2>Matches for {formatDisplayDate(searchedDate)} </h2>

@@ -7,14 +7,6 @@ const baseURL = 'https://sportapi7.p.rapidapi.com/api/v1/sport/football/schedule
 // API Key
 const apiKey = import.meta.env.VITE_RAPIDAPI_KEY;
 
-// Date Handling:
-// new Date() provides today's date
-// let example = new Date()
-// console.log(example)
-
-// 'Today' with YYYY-MM-DD format
-const today = new Date().toISOString().split("T")[0];
-
 // GET Matches by given date (date to pass as parameter)
 export async function getMatches(date) {
   const url = `${baseURL}/${date}`
