@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react"
-import { getTimeRemaining } from "../services/getTimeRemaining"
+import { getTimeRemaining } from "../utils/getTimeRemaining"
 import trionda from '../assets/ball-trionda-2026.png'
 import CountDownClock from "../components/CountDownClock"
 
