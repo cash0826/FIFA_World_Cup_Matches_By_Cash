@@ -1,11 +1,11 @@
-# React + Vite
+# FIFA World Cup 2026
+[add description]
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## API Key
+* This application uses a public external API. To obtain a key, please visit: https://rapidapi.com/rapidsportapi/api/sportapi7.
+* The basic plan will be 0 cost, only sign up is required.
+* Ensure to change for your API key in the .env file from the main directory.
 
 ## React Compiler
 
