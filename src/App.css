@@ -1,0 +1,57 @@
+.navbar {
+  color: white;
+  font-weight: 500;
+  background-color: rgb(66, 49, 223);
+  height: 100px;
+  border-radius: 6px;
+  padding: 6px 12px 6px 12px;
+  margin: 10px;
+  gap: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  div {
+    gap: 10px;
+  }
+
+  #live, #countdown {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-center;
+    gap: 10px;
+
+    .countdown-value {
+      text-align: right;
+    }
+
+    .countdown-key {
+      text-align: left;
+    }
+
+  }
+
+  button {
+    border: 0.5px solid black;
+    border-radius: 49%;
+    background-color: white;
+
+    &:hover {
+      box-shadow: var(--shadow);
+    }
+  }
+
+  #trionda {
+    width: 50px;
+    height: 50px;
+    border: 3px solid white;
+    border-radius: 50%;
+  }
+
+  h1 {
+    color: white;
+  }
+}

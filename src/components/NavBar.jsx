@@ -32,7 +32,7 @@ function NavBar() {
   return (
     <>
       <nav className="navbar">
-        <div className="nav-container">
+        <div>
           <button>
             <NavLink to="/">
               <img id="trionda" src={trionda} alt="Trionda 2026" title="Trionda 2026"/>
@@ -41,11 +41,11 @@ function NavBar() {
           </button>
         </div>
 
-        <div className="nav-container">
-          <h2>FIFA World Cup Matches 2026🥅</h2>
+        <div>
+          <h1>FIFA World Cup Matches 2026</h1>
         </div>
 
-        <div className="nav-container">
+        <div>
           <CountDownClock countdown={countdown}/>
         </div>
       </nav>
