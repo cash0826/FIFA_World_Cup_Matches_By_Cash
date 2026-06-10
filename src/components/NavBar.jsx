@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react"
-import trionda from '../assets/ball_trionda_2026.png'
+import trionda from '../assets/ball-trionda-2026.png'
 
 function NavBar() {
   const [ countdown, setCountdown ] = useState("");
