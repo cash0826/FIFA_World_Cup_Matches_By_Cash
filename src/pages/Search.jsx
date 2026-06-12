@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react"
 import { getMatches } from "../services/GetMatchesJSON"
+import { formatDisplayDate } from "../utils/formatDisplayDate"
 import NavBar from "../components/NavBar"
 import MatchGrid from "../components/MatchGrid"
 
@@ -18,19 +19,6 @@ function Search() {
   useEffect(() => {
     inputRef.current.focus();
   }, []); 
-
-  // Format Display Date
-  function formatDisplayDate(dateString) {
-
-    // Adding T00:00:00 creates a local midnight date and avoid timezone differences from UTC
-    return new Date(`${dateString}T00:00:00`)
-      .toLocaleDateString("en-US", {
-        weekday: "long",
-        month: "long",
-        day: "numeric",
-        year: "numeric",
-      });
-  }
 
   // Separate formatter function to display after a search
   const formattedDate = searchedDate ? formatDisplayDate(searchedDate) : "" ;
@@ -78,7 +66,7 @@ function Search() {
       {/* Show heading after user input */}
       {
         formattedDate
-        ? <h2>Matches for {formatDisplayDate(searchedDate)} </h2>
+        ? <h2>Matches for {formatDisplayDate(searchedDate)}: </h2>
         : null 
       }
       <div>

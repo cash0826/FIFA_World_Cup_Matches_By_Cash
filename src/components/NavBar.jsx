@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react"
 import { getTimeRemaining } from "../utils/getTimeRemaining"
+import '../styles/NavBar.css'
 import trionda from '../assets/ball-trionda-2026.png'
 import CountDownClock from "../components/CountDownClock"
 
@@ -32,22 +33,13 @@ function NavBar() {
   return (
     <>
       <nav className="navbar">
-        <div>
-          <button>
-            <NavLink to="/">
-              <img id="trionda" src={trionda} alt="Trionda 2026" title="Trionda 2026"/>
-              {/* Home */}
-            </NavLink>
-          </button>
-        </div>
-
-        <div>
-          <h1>FIFA World Cup Matches 2026</h1>
-        </div>
-
-        <div>
-          <CountDownClock countdown={countdown}/>
-        </div>
+        
+        <NavLink to="/" className="navbar-ball-logo">
+          <img src={trionda} id="trionda" alt="Trionda 2026" title="Trionda 2026"/>
+        </NavLink>
+        <h1>FIFA World Cup Matches 2026</h1>
+        <CountDownClock countdown={countdown}/>
+        
       </nav>
       <br/>
     </>
