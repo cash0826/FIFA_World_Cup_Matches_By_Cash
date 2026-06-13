@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Freeman:wght@400&family=Archivo+Narrow&display=swap');
+
+/* Global Variables */
+:root {
+  /* fonts */
+  --sans-body: 'Archivo Narrow', sans-serif;
+  --sans-head: 'Freeman', sans-serif;
+
+  /* responsive font sizes from smallest to largest */
+  --fontsize-body: clamp(1rem, 1vw, 1.375rem);
+  --fontsize-h4: clamp(1rem, 1.5vw, 1.125rem);
+  --fontsize-h3: clamp(1.25rem, 2vw, 1.75rem);
+  --fontsize-h2: clamp(1.5rem, 3vw, 3rem);
+  --fontsize-h1: clamp(1rem, 5vw, 3.5rem);
+
+  /* spacing 2300 - 600 (200, 160, 120 goes to 60 for mobile. You don't want huge space there */
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+
+  /* gray-scale color palette */
+  --white-default: rgb(230, 230, 230);
+  --black-default: rgb(80, 80, 80);
+  --gray-default: rgb(146, 146, 146);
+
+  /* blue-scale color palette */
+  --blue-bg: rgb(0, 0, 206);
+  --blue-fg: #3586ff;
+
+   /* green-scale color palette */
+  --green-bg: rgb(5, 77, 5);
+  --green-fg: green;
+
+   /* red-scale color palette */
+  --red-bg: maroon;
+  --red-fg: rgb(223, 0, 0);
+
+  /* gold Accents */
+  --accent1: rgb(228, 194, 3);
+  --accent2: rgb(241, 230, 167);
+
+  /* shadows */
+  --hover: rgb(82, 82, 82);
+  --shadow: rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+  --glow: 0 0 8px rgb(82, 177, 255), 0 0 2px rgb(82, 177, 255);
+}
+
+/*Reset*/
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: var(--white-default);
+  background-color: var(--black-default);
+  font-family: var(--sans-body);
+  font-size: var(--fontsize-body);
+  font-weight: 400;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--sans-head);
+}
+
+h4 {
+  font-size: var(--fontsize-h4)
+}
+
+h3 {
+  font-size: var(--fontsize-h3);
+}
+
+h2 {
+  font-size: var(--fontsize-h2);
+}
+
+h1 {
+  font-size: var(--fontsize-h1);
+}
+
+a {
+  color: var(--accent1);
+  display: block;
+}
+
+a:hover {
+  color: var(--accent2);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
