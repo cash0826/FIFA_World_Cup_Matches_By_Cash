@@ -19,11 +19,9 @@ function MatchesToday() {
   }
 
   return(
-    <>
-    <div>
+    <div className="matches-today-div">
       <MatchGrid matches={matches}/>
     </div>
-    </>
   )
 }
 

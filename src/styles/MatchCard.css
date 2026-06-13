@@ -1,0 +1,10 @@
+
+
+.match-card-div {
+  background-color: var(--white-default);
+  border: 1px solid var(--black-default);
+  box-shadow: var(--shadow);
+  border-radius: 10%;
+  width: 100%;
+  color: var(--black-default);
+}

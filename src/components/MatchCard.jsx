@@ -1,19 +1,15 @@
+import '../styles/MatchCard.css'
+import { formatTimeStamp } from "../utils/formatTimeStamp"
 
 function MatchCard( { match } )  {
-
-  // Format startTimestamp (UNIX) to display Local  Time
-  function formatTimeStamp(timeStamp) {
-    return new Date(timeStamp * 1000)
-      .toLocaleTimeString();
-  }
+  
+  // Format startTimestamp (UNIX) to display Local Time (separated to utils)
 
   return(
-    <>
-      <div className="match-card">
-        <h3> Round {match.round} | {match.group} </h3>
-        <h4>{match.homeTeam} vs {match.awayTeam} at {formatTimeStamp(match.startTimestamp)} </h4>
-      </div>
-    </>
+    <div className="match-card-div">
+      <h3>{match.homeTeam} | {formatTimeStamp(match.startTimestamp)} | {match.awayTeam} </h3>
+      <h4> Round {match.round} | {match.group} </h4>
+    </div>
   )
 }
 

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { Outlet, Link } from "react-router-dom"
 import { getMatches } from "../services/GetMatchesJSON"
+import '../styles/Home.css'
 import NavBar from "../components/NavBar"
 
 function Home() {
@@ -28,18 +29,18 @@ function Home() {
 
   return (
     <>
-    <NavBar />
+      <NavBar />
 
-    <main>
-      <h2>{getHeading()}</h2>
-      <Outlet context= { {matches, setMatches} }/>
-    </main>
+      <main>
+        <h2>{getHeading()}</h2>
+        <Outlet context= { {matches, setMatches} }/>
+      </main>
 
-    <footer>
-      <div><Link to="/tomorrow">View Matches for Tomorrow</Link></div>
-      <div><Link to="/search">Search Matches by Date</Link></div>
-      <div><Link to="/about">About FIFA World Cup 2026</Link></div>
-    </footer>
+      <footer>
+        <Link to="/tomorrow">View Matches for Tomorrow</Link>
+        <Link to="/search">Search Matches by Date</Link>
+        <Link to="/about">About FIFA World Cup 2026</Link>
+      </footer>
     </>
   )
 }
