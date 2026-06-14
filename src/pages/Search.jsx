@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react"
 import { getMatches } from "../services/GetMatchesJSON"
 import { formatDisplayDate } from "../utils/formatDisplayDate"
 import NavBar from "../components/NavBar"
+import Footer from "../components/Footer"
 import MatchGrid from "../components/MatchGrid"
 
 function Search() {
@@ -73,6 +74,10 @@ function Search() {
         <MatchGrid matches={matchesBySearch}/>
       </div>
     </main>
+
+    <footer>
+      <Footer/>
+    </footer>
 
     </>
   )

@@ -1,36 +1,41 @@
 .navbar {
   position: fixed;
   width: 100%;
+  margin: 0 auto;
   height: 75px;
   padding: 0 var(--spacing-lg);
   background-color: var(--blue-bg);
   box-shadow: var(--shadow);
+  text-align: center;
   box-sizing: border-box;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  gap: 50px;
+}
+
+.navbar-div-homebtn, .navbar-div-title, .navbar-div-clock {
+  padding: 10px;
 }
 
 .navbar-ball-logo {
   border-radius: 50%;
-  flex-shrink: 0;
   align-self: center;
   display: block;
-  box-sizing: border-box;
 
   &:hover {
   box-shadow: var(--glow);
   }
-}
 
-#trionda {
-  height: 50px;
-  width: auto;
+  #trionda {
+  width: 50px;
+  min-width: 50px;
+  height: auto;
+  }
 }
 
 .navbar-heading {
   line-height: 1;
-  padding: 5px;
   text-align: center;
 }
 
@@ -38,7 +43,7 @@
   text-align: center;
 } 
 
-.countdown-div {
+.navbar-div-clock {
   display: flex;
   padding: 2px;
 }
@@ -46,16 +51,16 @@
 .countdown-days, .countdown-hrs, .countdown-min, .countdown-sec {
   display: flex;
   flex-direction: column;
-  padding: 0 5px;
-  border-right: 1px dashed var(--accent1);
+  padding: 5px;
+  border-right: 1px dashed var(--white-default);
 
   h4 {
     text-align: right;
   }
 }
 
-@media (max-width: 900px) {
-  .countdown-div {
+@media (max-width: 950px) {
+  .navbar-div-clock {
     display: none;
   }
 }

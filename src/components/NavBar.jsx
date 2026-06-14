@@ -33,15 +33,20 @@ function NavBar() {
   return (
     <>
       <nav className="navbar">
-        
-        <NavLink to="/" className="navbar-ball-logo">
-          <img src={trionda} id="trionda" alt="Trionda 2026" title="Trionda 2026"/>
-        </NavLink>
-        <h1 className="navbar-heading">FIFA World Cup Matches 2026</h1>
-        <CountDownClock countdown={countdown}/>
-        
+        <div className="navbar-div-homebtn">
+          <NavLink to="/" className="navbar-ball-logo">
+            <img src={trionda} id="trionda" alt="Trionda 2026" title="Trionda 2026"/>
+          </NavLink>
+        </div>
+
+        <div className="navbar-div-title">
+          <h1 className="navbar-heading">FIFA World Cup Matches 2026</h1>
+        </div>
+
+        <div className="navbar-div-clock">
+          <CountDownClock countdown={countdown}/>
+        </div>
       </nav>
-      <br/>
     </>
   )
 }

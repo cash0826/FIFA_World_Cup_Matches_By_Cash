@@ -1,5 +1,5 @@
 // Teams from API response for tournament in 2026
-// After retrieving teams from API database, each country object was manually created with matching flag
+// After retrieving team names from API database, each country object was matched with flag
 
 export const teams = [
   {

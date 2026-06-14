@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react"
-import { Outlet, Link } from "react-router-dom"
+import { Outlet } from "react-router-dom"
 import { getMatches } from "../services/GetMatchesJSON"
-import '../styles/Home.css'
 import NavBar from "../components/NavBar"
+import Footer from "../components/Footer"
 
 function Home() {
   // State management of API fetch
@@ -11,8 +11,6 @@ function Home() {
   useEffect( () => {
     // Today's date, formatted for API param
     const today = new Date().toISOString().split("T")[0]
-    console.log(today)
-
     // use getMatchesJSON for now (no date needed)
     getMatches()
       .then( (data) => setMatches(data))
@@ -36,11 +34,8 @@ function Home() {
         <Outlet context= { {matches, setMatches} }/>
       </main>
 
-      <footer>
-        <Link to="/tomorrow">View Matches for Tomorrow</Link>
-        <Link to="/search">Search Matches by Date</Link>
-        <Link to="/about">About FIFA World Cup 2026</Link>
-      </footer>
+      <Footer/>
+
     </>
   )
 }
