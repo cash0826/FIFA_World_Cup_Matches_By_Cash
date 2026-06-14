@@ -12,6 +12,7 @@
   justify-content: center;
   align-items: center;
   gap: 50px;
+  color: var(--white-default)
 }
 
 .navbar-div-homebtn, .navbar-div-title, .navbar-div-clock {
