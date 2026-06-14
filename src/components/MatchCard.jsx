@@ -7,8 +7,8 @@ function MatchCard( { match } )  {
 
   return(
     <div className="match-card-div">
-      <h3>{match.homeTeam} | {formatTimeStamp(match.startTimestamp)} | {match.awayTeam} </h3>
-      <h4> Round {match.round} | {match.group} </h4>
+      <h3 className="match-title">{match.homeTeam} | {formatTimeStamp(match.startTimestamp)} | {match.awayTeam} </h3>
+      <h4 className="match-details"> Round {match.round} | {match.group} </h4>
     </div>
   )
 }

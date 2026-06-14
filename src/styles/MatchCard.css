@@ -8,3 +8,7 @@
   width: 100%;
   color: var(--black-default);
 }
+
+h3, h4 {
+  text-align: center;
+}

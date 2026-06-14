@@ -24,7 +24,7 @@ function Home() {
   function getHeading(){
     const today = new Date()
     const kickoff = new Date(`2026-06-11T00:00:00`)
-    return kickoff > today ? "Kickoff Matches Starting Jun 11:" : "Matches for Today"
+    return kickoff > today ? "Kickoff Matches Starting Jun 11:" : "Matches for Today:"
   }
 
   return (
