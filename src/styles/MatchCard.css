@@ -5,7 +5,7 @@
   border: 1px solid var(--black-default);
   box-shadow: var(--shadow);
   border-radius: 10%;
-  width: 100%;
+  min-width: 35vw;
   color: var(--black-default);
 }
 
