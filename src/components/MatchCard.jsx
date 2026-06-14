@@ -15,27 +15,34 @@ function MatchCard( { match } )  {
 
   return(
     <div className="match-card-div">
-      <h3 className="match-title">
+      <div className="match-homeTeam">
         <img
           className="flag"
           src={homeTeamFlag}
           title={match.homeTeam}
           alt={match.homeTeam}
         />
-        {match.homeTeam} 
+        <h4>{match.homeTeam}</h4> 
+      </div>
 
-        | {formatTimeStamp(match.startTimestamp)} 
+      <div className="match-details">
+        <h4>{formatTimeStamp(match.startTimestamp)}</h4>
+        <br/>
+        <p>{match.group}</p>
+        <p>Round {match.round}</p>
+      </div>
 
+      <div className="match-awayTeam">
         <img
           className="flag"
           src={awayTeamFlag}
           title={match.awayTeam}
           alt={match.awayTeam}
         />
-        | {match.awayTeam} 
-      </h3>
+        <h4>{match.awayTeam}</h4> 
+      </div>
       
-      <h4 className="match-details"> Round {match.round} | {match.group} </h4>
+      
     </div>
   )
 }

@@ -4,11 +4,36 @@
   background-color: var(--white-default);
   border: 1px solid var(--black-default);
   box-shadow: var(--shadow);
-  border-radius: 10%;
+  border-radius: 20px;
   min-width: 35vw;
   color: var(--black-default);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 5px;
+}
+
+.flag {
+  width: 75px;
+  height: auto;
+  border-radius: 0 50% 0 50%;
+}
+
+.match-homeTeam, .match-awayTeam, .match-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  width: 100px;
+  height: auto;
+}
+
+.match-details {
+  align-self: center;
 }
 
 h3, h4 {
   text-align: center;
 }
+
