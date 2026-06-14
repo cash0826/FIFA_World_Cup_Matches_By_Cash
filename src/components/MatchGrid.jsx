@@ -1,4 +1,5 @@
 import MatchCard from "../components/MatchCard"
+import '../styles/MatchGrid.css'
 
 function MatchGrid( { matches } ) {
 

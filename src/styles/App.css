@@ -52,7 +52,7 @@
   padding: 0;
 }
 
-body {
+#root, body {
   color: var(--white-default);
   background-color: var(--black-default);
   font-family: var(--sans-body);
@@ -64,7 +64,7 @@ body {
 main {
   min-height: 50vh;
   padding: 90px 25px 10px;
-  max-width: 1200px;
+  max-width: 800px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -94,6 +94,8 @@ h1 {
 }
 
 footer {
+  padding: 5px;
+  margin: 5px;
   display: flex;
   flex-direction: column;
   justify-content: center;

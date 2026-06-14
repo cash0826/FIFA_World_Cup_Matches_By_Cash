@@ -47,38 +47,40 @@ function Search() {
   return(
     <>
     <NavBar/>
-
-    <div>
-      <form className="search-bar" onSubmit={handleSubmit}>
-        <label htmlFor="search">Search by Date:</label>
-        <input
-          type="date"
-          id="search"
-          required
-          ref={inputRef}
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-        />
-        <button type="submit">Go!⚽</button>
-      </form>
-    </div>
     
     <main>
-      {/* Show heading after user input */}
-      {
-        formattedDate
-        ? <h2>Matches for {formatDisplayDate(searchedDate)}: </h2>
-        : null 
-      }
-      <div>
-        <MatchGrid matches={matchesBySearch}/>
+      <div className="search-bar">
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="search">Search by Date:</label>
+          <input
+            type="date"
+            id="search"
+            required
+            ref={inputRef}
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+          />
+          <button type="submit">Go!⚽</button>
+        </form>
       </div>
+
+
+      {/* Show after user input */}
+      {formattedDate && (
+        <div>
+          <h2>Matches for {formatDisplayDate(searchedDate)}:</h2>
+        </div>
+      )}
+
+      {formattedDate && (
+        <div>
+          <MatchGrid matches={matchesBySearch}/>
+        </div>
+      )}
+    
     </main>
 
-    <footer>
-      <Footer/>
-    </footer>
-
+    <Footer/>
     </>
   )
 }
