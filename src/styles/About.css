@@ -1,0 +1,24 @@
+
+.about-div {
+  padding: 25px;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  background-color: var(--blue-bg);
+  
+  color: var(--white-default);
+}
+.about-title, .about-heading, .about-description {
+  width: 100%;
+
+  p, h3, h4 {
+    text-align: left;
+    padding: 10px;
+  }
+  img {
+    margin: 10px;
+    border: 2px solid var(--blue-fg);
+  }
+}

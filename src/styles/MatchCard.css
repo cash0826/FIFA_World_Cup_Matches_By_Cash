@@ -1,0 +1,47 @@
+
+
+.match-card-div {
+  box-sizing: border-box;
+  background-color: var(--white-default);
+  border-radius: 20px;
+  min-width: 35vw;
+  color: var(--black-default);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 5px;
+  padding: 5px;
+}
+
+.flag {
+  width: 75px;
+  height: auto;
+  border-radius: 0 50% 0 50%;
+}
+
+.match-homeTeam, .match-awayTeam, .match-details {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  width: 100px;
+  height: auto;
+}
+
+.match-homeTeam, .match-awayTeam {
+  border-radius: 50%;
+}
+
+.match-details {
+  align-self: center;
+  border-radius: 0 20px 0 20px;
+  color: white;
+  background-color: var(--black-default);
+}
+
+h3, h4 {
+  text-align: center;
+}
+

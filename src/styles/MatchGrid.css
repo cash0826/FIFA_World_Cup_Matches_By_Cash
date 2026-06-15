@@ -1,0 +1,11 @@
+
+.matches-list-div {
+  padding: 25px;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--red-bg);
+  border: 2px solid var(--red-fg);
+}

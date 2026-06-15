@@ -1,9 +1,10 @@
 import MatchCard from "../components/MatchCard"
+import '../styles/MatchGrid.css'
 
 function MatchGrid( { matches } ) {
 
   return (
-    <div>
+    <div className="matches-list-div">
       {matches.map(match => (
         <MatchCard
           key={match.id}
