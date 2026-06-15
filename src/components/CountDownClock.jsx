@@ -2,9 +2,16 @@
 
 function CountDownClock( {countdown} ) {
 
+  const today = new Date().toLocaleDateString("en-US", {
+  weekday: "long",
+  year: "numeric",
+  month: "long",
+  day: "numeric"
+  });
+
   function getDiv(countdown){
     if (countdown.live === true) {
-      return <h3 className="live">Event is Live!</h3>
+      return <div className="live"><h3>Live!</h3><p>{today}</p></div>
     }
 
     return (
