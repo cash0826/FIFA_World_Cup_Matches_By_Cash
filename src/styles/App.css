@@ -62,13 +62,13 @@
 }
 
 main {
-  min-height: 50vh;
+  min-height: 89vh;
   padding: 90px 25px 10px;
   max-width: 1000px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   align-items: center;
   gap: var(--spacing-md);
 }

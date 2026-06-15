@@ -7,15 +7,18 @@
   align-items: flex-start;
   gap: 10px;
   background-color: var(--blue-bg);
+  
   color: var(--white-default);
 }
 .about-title, .about-heading, .about-description {
   width: 100%;
 
-  h3, h4 {
+  p, h3, h4 {
     text-align: left;
+    padding: 10px;
   }
   img {
-    padding: 10px;
+    margin: 10px;
+    border: 2px solid var(--blue-fg);
   }
 }

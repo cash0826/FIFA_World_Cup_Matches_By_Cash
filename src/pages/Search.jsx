@@ -1,3 +1,4 @@
+import '../styles/Search.css';
 import { useState, useEffect, useRef } from "react"
 import { getMatches } from "../services/GetMatchesJSON"
 import { formatDisplayDate } from "../utils/formatDisplayDate"
@@ -6,17 +7,14 @@ import Footer from "../components/Footer"
 import MatchGrid from "../components/MatchGrid"
 
 function Search() {
-
   // State Management of API Fetch
   const [matchesBySearch, setMatchesBySearch] = useState([]);
-
   // State Management of Search Query
   const [query, setQuery] = useState("");
   const [searchedDate, setSearchedDate ] = useState("");
 
   // Focus using useRef
   const inputRef = useRef(null); 
-
   useEffect(() => {
     inputRef.current.focus();
   }, []); 
@@ -27,12 +25,7 @@ function Search() {
   // Search function
   async function handleSubmit(e) {
     e.preventDefault();
-
     setSearchedDate(query)
-
-    // Log user input
-    console.log(query)
-
     // Await the API Fetch
     try {
       // use query as parameter for getMatches()
@@ -41,7 +34,6 @@ function Search() {
     } catch (error) {
       console.error("Error fetching matches: ", error)
     }
-    
   }
 
   return(
@@ -50,8 +42,8 @@ function Search() {
     
     <main>
       <div className="search-bar">
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="search">Search by Date:</label>
+        <form className="search" onSubmit={handleSubmit}>
+          <p><label htmlFor="search">Search by Date:</label></p>
           <input
             type="date"
             id="search"
@@ -60,23 +52,22 @@ function Search() {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
           />
-          <button type="submit">Go!⚽</button>
+          <button type="submit">Go!</button>
         </form>
       </div>
+        {/* Show after user input */}
+        {formattedDate && (
+          <div className="search-results-div">
+            <h2>Matches for {formatDisplayDate(searchedDate)}:</h2>
+          </div>
+        )}
 
-
-      {/* Show after user input */}
-      {formattedDate && (
-        <div>
-          <h2>Matches for {formatDisplayDate(searchedDate)}:</h2>
-        </div>
-      )}
-
-      {formattedDate && (
-        <div>
-          <MatchGrid matches={matchesBySearch}/>
-        </div>
-      )}
+        {formattedDate && (
+          <>
+            <MatchGrid matches={matchesBySearch}/>
+          </>
+        )}        
+      
     
     </main>
 

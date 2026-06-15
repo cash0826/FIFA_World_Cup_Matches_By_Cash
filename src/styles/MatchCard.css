@@ -1,6 +1,7 @@
 
 
 .match-card-div {
+  box-sizing: border-box;
   background-color: var(--white-default);
   border-radius: 20px;
   min-width: 35vw;

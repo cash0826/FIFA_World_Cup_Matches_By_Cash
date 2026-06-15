@@ -1,0 +1,33 @@
+
+.search{
+  min-width: 38vw;
+  padding: 10px;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--green-bg);
+  color: var(--white-default);
+  border: 2px solid var(--green-fg);
+  form {
+    font-size: var(--fontsize-body);
+  }
+}
+
+input[type="date"] {
+  font-family: var(--sans-body);
+  font-size: var(--fontsize-body);   /* Makes the text and calendar icon larger */
+  padding: 0px;  /* Adds space inside the input */
+  width: 125px;        /* Makes the input wider */
+  height: auto;        /* Makes the input taller */
+}
+
+button {
+  font-family: var(--sans-body);
+  font-size: var(--fontsize-body);   /* Makes the text and calendar icon larger */
+  width: 50px;        /* Makes the input wider */
+  height: auto;        /* Makes the input taller */
+}
+
