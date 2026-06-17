@@ -36,6 +36,9 @@ function Search() {
     }
   }
 
+  // Sort Matches in order of occurrence. Variable to be used in jsx return()
+  const sortedMatches = matchesBySearch.sort((a, b) => a.startTimestamp - b.startTimestamp)
+
   return(
     <>
     <NavBar/>

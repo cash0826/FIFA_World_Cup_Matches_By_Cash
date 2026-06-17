@@ -16,11 +16,14 @@ function MatchesTomorrow() {
       const tomorrowFormatted = tomorrow.toISOString().split("T")[0];
       return tomorrowFormatted
     }
-    // using getMatches from JSON file for now (add tomorrow() parameter when ready)
+    // using getMatches from JSON file for now (add tomorrow() parameter)
     getMatches()
       .then( (data) => setMatchesTomorrow(data))
       .catch( (error) => console.log("Error fetching matches for tomorrow: ", error))
   }, [])
+
+  // Sort Matches in order of occurrence. Variable to be used in jsx return()
+  const sortedMatches = matchesTomorrow.sort((a, b) => a.startTimestamp - b.startTimestamp)
 
   // Function to check if World Cup has started
   // Heading will return "Matches for Tomorrow" if the event starts tomorrow
@@ -37,7 +40,7 @@ function MatchesTomorrow() {
     <main>
       <h2>{getHeading()}</h2>
       <div>
-        <MatchGrid matches={matchesTomorrow}/>
+        <MatchGrid matches={sortedMatches}/>
       </div>
     </main>
     <footer>
