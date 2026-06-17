@@ -16,7 +16,7 @@ function NavBar() {
 
   useEffect( () => {
     // World Cup 2026 Kick Off: First Match JUN 11 // CHANGING FOR DEVELOPMENT
-    const kickoff = new Date(`2026-06-20T15:00:00`)
+    const kickoff = new Date(`2026-06-11T15:00:00`)
 
     // Update on First Render
     setCountdown(getTimeRemaining(kickoff));
