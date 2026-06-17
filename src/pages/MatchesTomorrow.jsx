@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { getMatches } from "../services/GetMatches"
+import { getMatches } from "../services/GetMatchesJSON"
 import NavBar from "../components/NavBar"
 import Footer from "../components/Footer"
 import MatchGrid from "../components/MatchGrid"
@@ -17,7 +17,7 @@ function MatchesTomorrow() {
       return tomorrowFormatted
     }
     // using getMatches from JSON file for now (add tomorrow() parameter when ready)
-    getMatches(tomorrow())
+    getMatches()
       .then( (data) => setMatchesTomorrow(data))
       .catch( (error) => console.log("Error fetching matches for tomorrow: ", error))
   }, [])

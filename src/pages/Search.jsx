@@ -1,6 +1,6 @@
 import '../styles/Search.css';
 import { useState, useEffect, useRef } from "react"
-import { getMatches } from "../services/GetMatches"
+import { getMatches } from "../services/GetMatchesJSON"
 import { formatDisplayDate } from "../utils/formatDisplayDate"
 import NavBar from "../components/NavBar"
 import Footer from "../components/Footer"
@@ -25,7 +25,7 @@ function Search() {
   // Search function
   async function handleSubmit(e) {
     e.preventDefault();
-    setSearchedDate(query)
+    setSearchedDate()
     // Await the API Fetch
     try {
       // use query as parameter for getMatches()

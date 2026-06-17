@@ -18,18 +18,16 @@ export async function getMatches() {
     const startTimestamp = Math.floor(startOfDay.getTime() / 1000);
     const endTimestamp = Math.floor(endOfDay.getTime() / 1000);
 
-    const worldCupMatches = data.filter(
-      event => event.tournament?.uniqueTournament?.id === 16 &&
-                event.startTimestamp >= startTimestamp &&
-                event.startTimestamp <= endTimestamp
-    )
+    const worldCupMatches = data
     .map((event) =>({
       id: event.id,
       homeTeam: event.homeTeam.name,
       awayTeam: event.awayTeam.name,
       startTimestamp: event.startTimestamp,
-      group: event.tournament.groupName,
-      round: event.roundInfo.round
+      group: event.tournament.groupSign,
+      isLive: event.tournament.isLive ?? false,
+      homeScore: event.homeScore.current,
+      awayScore: event.awayScore.current
     }))
 
     return worldCupMatches;
