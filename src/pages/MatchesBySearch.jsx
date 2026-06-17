@@ -1,7 +1,8 @@
 import '../styles/Search.css';
 import { useState, useEffect, useRef } from "react"
-import { getMatches } from "../services/GetMatchesJSON"
+import { getMatches } from "../services/GetMatches"
 import { formatDisplayDate } from "../utils/formatDisplayDate"
+import { filterToLocaleDate } from "../utils/filterToLocaleDate"
 import NavBar from "../components/NavBar"
 import Footer from "../components/Footer"
 import MatchGrid from "../components/MatchGrid"
@@ -16,8 +17,12 @@ function Search() {
   // Focus using useRef
   const inputRef = useRef(null); 
   useEffect(() => {
-    inputRef.current.focus();
+    inputRef.current?.focus();
   }, []); 
+
+  // Converts query string to date and adds 1 to date
+  const search = new Date(query)
+  search.setDate(search.getDate() + 1);
 
   // Separate formatter function to display after a search
   const formattedDate = searchedDate ? formatDisplayDate(searchedDate) : "" ;
@@ -29,12 +34,16 @@ function Search() {
     // Await the API Fetch
     try {
       // use query as parameter for getMatches()
-      const data = await getMatches();
+      const data = await getMatches(query);
       setMatchesBySearch(data);
     } catch (error) {
       console.error("Error fetching matches: ", error)
     }
   }
+
+  // Sort Matches in order of occurrence. Variable to be used in jsx return()
+  const sortedMatches = filterToLocaleDate(matchesBySearch, search)
+    .sort((a, b) => a.startTimestamp - b.startTimestamp)
 
   return(
     <>
@@ -64,7 +73,7 @@ function Search() {
 
         {formattedDate && (
           <>
-            <MatchGrid matches={matchesBySearch}/>
+            <MatchGrid matches={sortedMatches}/>
           </>
         )}        
       

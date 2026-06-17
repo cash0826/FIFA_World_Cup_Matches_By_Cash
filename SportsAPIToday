@@ -789,7 +789,7 @@
                 },
                 "priority": 807,
                 "groupSign": "G",
-                "isLive": true,
+                "isLive": false,
                 "id": 3960,
                 "fieldTranslations": {
                     "nameTranslation": {

@@ -13,6 +13,10 @@ function MatchCard( { match } )  {
   const awayTeam = teams.find(team => team.name === match.awayTeam)
   const awayTeamFlag = awayTeam ? new URL(`../assets/flags/${awayTeam.flag}`, import.meta.url).href : ''
 
+  function addLive() {
+    return match.isLive ? "LIVE" : null
+  }
+
   return(
     <div className="match-card-div">
       <div className="match-homeTeam">
@@ -28,8 +32,8 @@ function MatchCard( { match } )  {
       <div className="match-details">
         <h4>{formatTimeStamp(match.startTimestamp)}</h4>
         <br/>
-        <p>{match.group}</p>
-        <p>Round {match.round}</p>
+        <p>Group {match.group}</p>
+        <p id="live">{addLive()}</p>
       </div>
 
       <div className="match-awayTeam">
