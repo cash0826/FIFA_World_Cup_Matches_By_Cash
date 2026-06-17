@@ -10,14 +10,7 @@ export async function getMatches() {
   const response = await fetch(url);
   if (response.ok) {
     const data = await response.json();
-
-    const startOfDay = new Date(`2026-06-13T00:00:00`);
-    const endOfDay = new Date(`2026-06-13T23:59:59`);
     
-    // Convert to UNIX timestamps (API uses seconds, not milliseconds)
-    const startTimestamp = Math.floor(startOfDay.getTime() / 1000);
-    const endTimestamp = Math.floor(endOfDay.getTime() / 1000);
-
     const worldCupMatches = data
     .map((event) =>({
       id: event.id,

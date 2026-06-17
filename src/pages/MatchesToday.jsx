@@ -3,15 +3,24 @@ import MatchGrid from "../components/MatchGrid"
 
 function MatchesToday() {
   const { matches} = useOutletContext();
-
-  // Requires further development
-  // If event has not started, display events on kickoff date
-
   const today = new Date()
+
+  // -+1 days in API results. This function only returns matches for local date
+  const matchesForToday = matches.filter(match => {
+    const matchDate = new Date(match.startTimestamp * 1000)
+    return(
+      matchDate.toDateString() === today.toDateString()
+    );
+  });
+
+  // Sort Matches in order of occurrence. Variable to be used in jsx return()
+  const sortedMatches = matchesForToday.sort((a, b) => a.startTimestamp - b.startTimestamp)
+
+  // Heading based on date and kickoff
   const kickoff = new Date(`2026-06-11T00:00:00`)
 
   if (kickoff > today) {
-    return <p>Stay Tuned!</p>
+    return <p>Kickoff starts June 11th 2026</p>
   }
 
   if (matches.length === 0){
@@ -20,7 +29,7 @@ function MatchesToday() {
 
   return(
     <div className="matches-today-div">
-      <MatchGrid matches={matches}/>
+      <MatchGrid matches={sortedMatches}/>
     </div>
   )
 }
