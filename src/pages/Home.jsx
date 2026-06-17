@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { Outlet } from "react-router-dom"
-import { getMatches } from "../services/GetMatchesJSON"
+import { getMatches } from "../services/GetMatches"
 import NavBar from "../components/NavBar"
 import Footer from "../components/Footer"
 
@@ -12,7 +12,7 @@ function Home() {
     // Today's date, formatted for API param
     const today = new Date().toISOString().split("T")[0]
     // use getMatchesJSON for now (no date needed)
-    getMatches()
+    getMatches(today)
       .then( (data) => setMatches(data))
       .catch( (error) => console.log("Error fetching matches: ", error));
   }, []);

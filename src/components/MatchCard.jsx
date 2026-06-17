@@ -28,8 +28,7 @@ function MatchCard( { match } )  {
       <div className="match-details">
         <h4>{formatTimeStamp(match.startTimestamp)}</h4>
         <br/>
-        <p>{match.group}</p>
-        <p>Round {match.round}</p>
+        <p>Group {match.group}</p>
       </div>
 
       <div className="match-awayTeam">

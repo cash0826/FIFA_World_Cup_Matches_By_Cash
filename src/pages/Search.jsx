@@ -1,6 +1,6 @@
 import '../styles/Search.css';
 import { useState, useEffect, useRef } from "react"
-import { getMatches } from "../services/GetMatchesJSON"
+import { getMatches } from "../services/GetMatches"
 import { formatDisplayDate } from "../utils/formatDisplayDate"
 import NavBar from "../components/NavBar"
 import Footer from "../components/Footer"
@@ -29,7 +29,7 @@ function Search() {
     // Await the API Fetch
     try {
       // use query as parameter for getMatches()
-      const data = await getMatches();
+      const data = await getMatches(query);
       setMatchesBySearch(data);
     } catch (error) {
       console.error("Error fetching matches: ", error)
