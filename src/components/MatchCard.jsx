@@ -3,19 +3,12 @@ import { formatTimeStamp } from "../utils/formatTimeStamp"
 import { teams } from "../utils/teams"
 
 function MatchCard( { match } )  {
-  
-  // Format startTimestamp (UNIX) to display Local Time (separated to utils)
-
-  // Get team data from teams array to access flag filename
+  // Get team data from teams object to access flag filename
   const homeTeam = teams.find(team => team.name === match.homeTeam)
   const homeTeamFlag = homeTeam ? new URL(`../assets/flags/${homeTeam.flag}`, import.meta.url).href : ''
 
   const awayTeam = teams.find(team => team.name === match.awayTeam)
   const awayTeamFlag = awayTeam ? new URL(`../assets/flags/${awayTeam.flag}`, import.meta.url).href : ''
-
-  function addLive() {
-    return match.isLive ? "LIVE" : null
-  }
 
   return(
     <div className="match-card-div">
@@ -33,7 +26,7 @@ function MatchCard( { match } )  {
         <h4>{formatTimeStamp(match.startTimestamp)}</h4>
         <br/>
         <p>Group {match.group}</p>
-        <p id="live">{addLive()}</p>
+        <p id="live">{match.status}</p>
       </div>
 
       <div className="match-awayTeam">

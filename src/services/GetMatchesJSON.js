@@ -18,7 +18,7 @@ export async function getMatches() {
       awayTeam: event.awayTeam.name,
       startTimestamp: event.startTimestamp,
       group: event.tournament.groupSign,
-      isLive: event.tournament.isLive ?? false,
+      status: event.status.description,
       homeScore: event.homeScore.current,
       awayScore: event.awayScore.current
     }))
