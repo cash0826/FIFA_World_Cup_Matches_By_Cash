@@ -26,7 +26,10 @@ function MatchCard( { match } )  {
         <h4>{formatTimeStamp(match.startTimestamp)}</h4>
         <br/>
         <p>Group {match.group}</p>
-        <p id="live">{match.status}</p>
+        {match.status !== "Not started" && (
+          <p id="live"> {match.status} </p>
+        )}
+
       </div>
 
       <div className="match-awayTeam">

@@ -12,17 +12,6 @@ function MatchesToday() {
   const sortedMatches = filterToLocaleDate(matches, today)
     .sort((a, b) => a.startTimestamp - b.startTimestamp)
 
-  // Heading based on date and kickoff
-  const kickoff = new Date(`2026-06-11T00:00:00`)
-
-  if (kickoff > today) {
-    return <p>Kickoff starts June 11th 2026</p>
-  }
-
-  if (sortedMatches.length === 0){
-    return <p>Loading Events...</p>
-  }
-
   return(
     <div className="matches-today-div">
       <MatchGrid matches={sortedMatches}/>
