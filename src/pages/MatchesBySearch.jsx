@@ -21,7 +21,7 @@ function Search() {
   }, []); 
 
   // Converts query string to date and adds 1 to date
-  const search = new Date(query)
+  const search = new Date(searchedDate)
   search.setDate(search.getDate() + 1);
 
   // Separate formatter function to display after a search
@@ -47,40 +47,35 @@ function Search() {
 
   return(
     <>
-    <NavBar/>
-    
-    <main>
-      <div className="search-bar">
-        <form className="search" onSubmit={handleSubmit}>
-          <p><label htmlFor="search">Search by Date:</label></p>
-          <input
-            type="date"
-            id="search"
-            required
-            ref={inputRef}
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-          />
-          <button type="submit">Go!</button>
-        </form>
-      </div>
-        {/* Show after user input */}
-        {formattedDate && (
-          <div className="search-results-div">
-            <h2>Matches for {formatDisplayDate(searchedDate)}:</h2>
-          </div>
-        )}
-
-        {formattedDate && (
-          <>
-            <MatchGrid matches={sortedMatches}/>
-          </>
-        )}        
+      <NavBar/>
       
-    
-    </main>
+      <main>
+        <div className="search-bar">
+          <form className="search" onSubmit={handleSubmit}>
+            <p><label htmlFor="search">Search by Date:</label></p>
+            <input
+              type="date"
+              id="search"
+              required
+              ref={inputRef}
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+            />
+            <button type="submit">Go!</button>
+          </form>
+        </div>
+          {/* Show after user input */}
+          {searchedDate && (
+            <>
+              <div className="search-results-div">
+                <h2>Matches for {formatDisplayDate(searchedDate)}:</h2>
+              </div>
+              <MatchGrid matches={sortedMatches}/>            
+            </>
+          )}
 
-    <Footer/>
+      </main>
+      <Footer/>
     </>
   )
 }
