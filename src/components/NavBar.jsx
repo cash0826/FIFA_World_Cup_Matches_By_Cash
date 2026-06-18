@@ -6,26 +6,23 @@ import trionda from '../assets/ball-trionda-2026.png'
 import CountDownClock from "../components/CountDownClock"
 
 function NavBar() {
-  const [ countdown, setCountdown ] = useState({
+  // World Cup 2026 Kick Off: First Match JUN 11
+  const kickoff = new Date(`2026-06-11T15:00:00`)
+  // Lazy initializer to return initial state
+  const [ countdown, setCountdown ] = useState(() => ({
     days: 0,
     hours: 0,
     minutes: 0,
     seconds: 0,
-    live: false
-  });
+    live: false,
+    ...getTimeRemaining(kickoff)
+  }));
 
   useEffect( () => {
-    // World Cup 2026 Kick Off: First Match JUN 11 // CHANGING FOR DEVELOPMENT
-    const kickoff = new Date(`2026-06-11T15:00:00`)
-
-    // Update on First Render
-    setCountdown(getTimeRemaining(kickoff));
-    
-    // Imported Helper Function (TimeRemaining)
+    // Interval to update countdown every second
     const timer = setInterval(() => {
       setCountdown(getTimeRemaining(kickoff))
     }, 1000);
-
     // Clear Timer
     return () => clearInterval(timer);
   }, [])
