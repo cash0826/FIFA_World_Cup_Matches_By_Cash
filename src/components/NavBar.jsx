@@ -7,7 +7,7 @@ import CountDownClock from "../components/CountDownClock"
 
 function NavBar() {
   // World Cup 2026 Kick Off: First Match JUN 11
-  const kickoff = new Date(`2026-06-11T15:00:00`)
+  const [ kickoff, setKickoff ] = useState(new Date(`2026-06-11T15:00:00`))
   // Lazy initializer to return initial state
   const [ countdown, setCountdown ] = useState(() => ({
     days: 0,
