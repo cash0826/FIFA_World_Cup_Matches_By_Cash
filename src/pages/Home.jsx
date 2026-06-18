@@ -5,11 +5,13 @@ import { formatToday } from "../utils/formatToday"
 import NavBar from "../components/NavBar"
 import Footer from "../components/Footer"
 
+// Moved to outside of the component (static)
+const today = new Date();
+const todayFormatted = formatToday(today)
+
 function Home() {
   // State management of API fetch
   const [matches, setMatches] = useState([]);
-  const today = new Date();
-  const todayFormatted = formatToday(today)
 
   useEffect( () => {
     getMatches(todayFormatted) // todayFormatted for API
@@ -27,14 +29,11 @@ function Home() {
   return (
     <>
       <NavBar />
-
       <main>
         <h2>{getHeading()}</h2>
         <Outlet context= { {matches, setMatches} }/>
       </main>
-
       <Footer/>
-
     </>
   )
 }

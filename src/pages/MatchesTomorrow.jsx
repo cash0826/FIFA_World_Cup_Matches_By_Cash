@@ -5,11 +5,13 @@ import NavBar from "../components/NavBar"
 import Footer from "../components/Footer"
 import MatchGrid from "../components/MatchGrid"
 
+// Moved to outside of the component (static)
+const tomorrow = new Date();
+tomorrow.setDate(tomorrow.getDate() + 1);
+
 function MatchesTomorrow() {
   // State Management of API Fetch
   const [matchesTomorrow, setMatchesTomorrow] = useState([])
-  const tomorrow = new Date();
-  tomorrow.setDate(tomorrow.getDate() + 1);
 
   useEffect( () => {
     // Function to Return Tomorrow's Date
