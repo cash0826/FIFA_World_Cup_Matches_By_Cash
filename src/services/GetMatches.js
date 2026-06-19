@@ -31,12 +31,15 @@ export async function getMatches(date) {
       .map(event => ({
         id: event.id,
         homeTeam: event.homeTeam.name,
+        homeTeamCode: event.homeTeam.nameCode, 
         awayTeam: event.awayTeam.name,
+        awayTeamCode: event.awayTeam.nameCode,
         startTimestamp: event.startTimestamp,
         group: event.tournament.groupSign,
         status: event.status.description,
+        inProgress: event.status.type,
         homeScore: event.homeScore.current,
-        awayScore: event.awayScore.current
+        awayScore: event.awayScore.current,
       }))
 
       // async function fetches API response returns only 2 to 4 events needed per day (date)

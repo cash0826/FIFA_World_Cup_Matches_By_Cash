@@ -1,15 +1,28 @@
 
+.match-card-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  box-sizing: border-box;
+  background-color: white;
+  border-radius: 20px;
+  min-width: 35vw;
+  min-height: auto;
+  color: var(--black-default);
+  gap: 5px;
+  padding: 5px;
+}
 
 .match-card-div {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;  
   box-sizing: border-box;
   background-color: var(--white-default);
   border-radius: 20px;
-  min-width: 35vw;
   color: var(--black-default);
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 5px;
+  gap: 10px;
   padding: 5px;
 }
 
@@ -17,10 +30,15 @@
   width: 75px;
   height: auto;
   border-radius: 0 50% 0 50%;
+  border: 1px solid var(--gray-default);
+}
+
+.emblem {
+  width: auto;
+  height: 40px;
 }
 
 .match-homeTeam, .match-awayTeam, .match-details {
-  background-color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -31,7 +49,7 @@
 }
 
 .match-homeTeam, .match-awayTeam {
-  border-radius: 50%;
+  border-radius: 10px;
 }
 
 .match-details {
@@ -41,11 +59,39 @@
   background-color: var(--black-default);
 }
 
+.match-score {
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: auto;
+  height: 30px;
+  background-color: lightblue;
+  border: 1px solid var(--blue-fg);
+  border-radius: 10px;
+}
+
+.country-short-code {
+  color: white;
+  background-color: var(--black-default);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.score {
+  font-family: monospace;
+  color: var(--black-default);
+  padding: 5px;
+}
+
 h3, h4 {
   text-align: center;
 }
 
-#live {
+#status {
   color: var(--accent1);
   text-align: center;
 }
+
