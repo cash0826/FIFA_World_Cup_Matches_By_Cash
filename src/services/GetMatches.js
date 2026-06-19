@@ -2,6 +2,7 @@
 //// Loaded environment variables from .env file:
 
 // Base API URL (SportsAPI)
+// World Cup Unique tournament id: 16
 const baseURL = 'https://sportapi7.p.rapidapi.com/api/v1/unique-tournament/16/events-on-date?date=';
 
 // API Key
@@ -23,9 +24,7 @@ export async function getMatches(date) {
     });
     if (response.ok) {
       const data = await response.json();
-      // Filter response by events that match FIFA World Cup 
-      // (In SportsAPI, the matching key is id 16)
-      // AND filter by local date boundaries to exclude events from other days
+
       // Maps worldCupMatches to keys needed for state management      
       const worldCupMatches = data.events
       .map(event => ({
