@@ -4,7 +4,9 @@ import { teams } from "../utils/teams"
 function RowCard( { row } ) {
 
   const team = teams.find(team => team.name === row.team)
-  const teamFlag = team ? new URL(`../assets/flags/${team.flag}`, import.meta.url).href : ''  
+  const teamFlag = team ? new URL(`../assets/flags/${team.flag}`, import.meta.url).href : '' 
+
+  // Possible sort needed to order teams by their position in the group, but API response does this already
 
   return (
     <div className="row-div">

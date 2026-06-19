@@ -6,6 +6,7 @@
   width: 45vw;
   height: auto;
   max-width: 800px;
+  border: 2px solid var(--blue-fg);
 
   h4 {
     padding: 5px;
@@ -24,5 +25,5 @@
   justify-content: space-around;
   align-items: center;
   padding: 5px;
-  gap: 10px;
+  gap: 5px;
 }
