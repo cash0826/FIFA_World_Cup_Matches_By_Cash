@@ -9,7 +9,7 @@ const apiKey = import.meta.env.VITE_RAPIDAPI_KEY;
 
 // GET Matches by given date (date to pass as parameter)
 export async function getStandings() {
-  const response = await fetch(url, {
+  const response = await fetch(BASE_URL, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -23,12 +23,21 @@ export async function getStandings() {
     // Maps standings to keys needed for state management      
     const standings = data.standings
     .map(standing => ({
-      id: standings.id,
-      group: standings.name,
-      rows: standings.rows
+      id: standing.id,
+      group: standing.name,
+      rows: standing.rows.map(row => ({
+        id: row.id,
+        team: row.team.name,
+        teamCode: row.team.nameCode,
+        wins: row.wins,
+        losses: row.losses,
+        draws: row.draws,
+        points: row.points,
+        position: row.position
+      })),
     }))
 
-    // async function fetches API response returns only 2 to 4 events needed per day (date)
+    // async function fetches API response returns standings object with nested row objects
     return standings;
   }
   throw new Error(`Error fetching matches: ${response.statusText}`);
