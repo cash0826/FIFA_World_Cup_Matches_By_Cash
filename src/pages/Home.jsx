@@ -14,7 +14,7 @@ function Home() {
   const [matches, setMatches] = useState([]);
 
   useEffect( () => {
-    getMatches(todayFormatted) // todayFormatted for API
+    getMatches(todayFormatted) // todayFormatted to Strings for API
       .then( (data) => setMatches(data))
       .catch( (error) => console.log("Error fetching matches: ", error));
   }, []);

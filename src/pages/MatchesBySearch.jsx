@@ -1,4 +1,4 @@
-import '../styles/Search.css';
+import '../styles/MatchesBySearch.css';
 import { useState, useEffect, useRef } from "react"
 import { getMatches } from "../services/GetMatches"
 import { formatDisplayDate } from "../utils/formatDisplayDate"
