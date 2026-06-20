@@ -3,14 +3,14 @@
 
 // Base API URL (SportsAPI)
 // World Cup Unique tournament id: 16
-const baseURL = 'https://sportapi7.p.rapidapi.com/api/v1/unique-tournament/16/events-on-date?date=';
+const BASE_URL = 'https://sportapi7.p.rapidapi.com/api/v1/unique-tournament/16/events-on-date?date=';
 
 // API Key
 const apiKey = import.meta.env.VITE_RAPIDAPI_KEY;
 
 // GET Matches by given date (date to pass as parameter)
 export async function getMatches(date) {
-  const url = `${baseURL}${date}`
+  const url = `${BASE_URL}${date}`
 
   // Only run if a formatted date is provided
   if (date) {
