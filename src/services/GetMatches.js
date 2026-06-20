@@ -44,7 +44,13 @@ export async function getMatches(date) {
       // async function fetches API response returns only 2 to 4 events needed per day (date)
       return worldCupMatches;
     }
-    throw new Error(`Error fetching matches: ${response.statusText}`);
+    if (response.status === 404) {
+      return {
+        code: 404,
+        message: "Match schedule unavailable: To be Announced"
+      };
+    }
+    throw new Error(`fetching matches: ${response.statusText}`);
     return null
   }
 }

@@ -42,8 +42,11 @@ function Search() {
   }
 
   // Sort Matches in order of occurrence. Variable to be used in jsx return()
-  const sortedMatches = filterToLocaleDate(matchesBySearch, search)
-    .sort((a, b) => a.startTimestamp - b.startTimestamp)
+  // Handle both array responses and 404 error objects
+  const sortedMatches = Array.isArray(matchesBySearch)
+    ? filterToLocaleDate(matchesBySearch, search)
+        .sort((a, b) => a.startTimestamp - b.startTimestamp)
+    : matchesBySearch;
 
   return(
     <>

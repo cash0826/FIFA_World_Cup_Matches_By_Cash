@@ -9,6 +9,11 @@ function MatchGrid( { matches } ) {
     return <p>Kickoff starts June 11th 2026</p>
   }
 
+  // Handle 404 response from API
+  if (matches.message) {
+    return <p>{matches.message}</p>
+  }
+
   if (matches.length === 0){
     return <p>Loading Events...</p>
   }  
