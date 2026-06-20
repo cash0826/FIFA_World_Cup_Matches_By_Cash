@@ -52,7 +52,7 @@ Parameters:
 
 - `https://sportapi7.p.rapidapi.com/api/v1/unique-tournament/{16}/season/{58210}/standings/total`  
 
-Parameters:
+Parameters:  
 {16} is the unique tournment id used to return tournments matching `FIFA World Cup`  
 {58210} is the unique season id that returns FIFA World Cup matches from 2026  
 
