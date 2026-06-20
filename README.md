@@ -57,6 +57,6 @@ Parameters:
 {58210} is the unique season id that returns FIFA World Cup matches from 2026  
 
 Endpoints:  
-* `GET /unique-tournament/{16}/events-on-date?date={YYYY-MM-DD}` —  Returns events object with full details of matches occuring =+-1 day of the given date  
-* `GET /unique-tournament/{16}/season/{58210}/standings/total` — Returns current tournament standings. For FIFA World Cup, it returns the standings of each of the 12 groups, including "rows" object with each team, wins, losses, draws, points and other details. It also returns an additional "Third-Place Teams" Group with rows.
+* `GET /unique-tournament/16/events-on-date?date=` —  Returns events object with full details of matches occuring =+-1 day of the given date  
+* `GET /unique-tournament/16/season/58210/standings/total` — Returns current tournament standings. For FIFA World Cup, it returns the standings of each of the 12 groups, including "rows" object with each team, wins, losses, draws, points and other details. It also returns an additional "Third-Place Teams" Group with rows.
 
