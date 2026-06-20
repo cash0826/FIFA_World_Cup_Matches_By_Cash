@@ -2,6 +2,7 @@
 //// Load environment variables from .env file:
 
 // Base API URL (SportsAPI)
+// World Cup Unique tournament id: 16
 const BASE_URL = 'https://sportapi7.p.rapidapi.com/api/v1/unique-tournament/16/season/58210/standings/total';
 
 // API Key

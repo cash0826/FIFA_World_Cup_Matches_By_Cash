@@ -1,5 +1,5 @@
-//// Added .env file to project root to store environment variables locally
-//// Loaded environment variables from .env file:
+//// Add .env file to project root to store environment variables locally
+//// Load environment variables from .env file:
 
 // Base API URL (SportsAPI)
 // World Cup Unique tournament id: 16

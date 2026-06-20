@@ -10,7 +10,6 @@ const today = new Date();
 const todayFormatted = formatToday(today)
 
 function Home() {
-  // State management of API fetch
   const [matches, setMatches] = useState([]);
 
   useEffect( () => {

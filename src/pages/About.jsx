@@ -22,7 +22,7 @@ function About() {
           </div>
 
           <div className="about-title">
-            <img src={FIFA_2022} id="FIFA" alt="FIFA 2026" title="FIFA 2026"/>
+            <img src={FIFA_2022} id="FIFA" alt="World Cup Winners 2022" title="World Cup Winners 2022"/>
           </div>          
         </div>
       </main>

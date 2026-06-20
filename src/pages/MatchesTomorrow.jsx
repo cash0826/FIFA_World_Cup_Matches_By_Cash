@@ -10,16 +10,14 @@ const tomorrow = new Date();
 tomorrow.setDate(tomorrow.getDate() + 1);
 
 function MatchesTomorrow() {
-  // State Management of API Fetch
   const [matchesTomorrow, setMatchesTomorrow] = useState([])
 
   useEffect( () => {
-    // Function to Return Tomorrow's Date
+    // Function to format Tomorrow's Date
     function formatTomorrow () {
       const tomorrowFormatted = tomorrow.toISOString().split("T")[0];
       return tomorrowFormatted
     }
-    // using getMatches from JSON file for now (add formatTomorrow() parameter)
     getMatches(formatTomorrow())
       .then( (data) => setMatchesTomorrow(data))
       .catch( (error) => console.log("Error fetching matches for tomorrow: ", error))

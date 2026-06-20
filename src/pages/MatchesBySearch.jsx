@@ -8,7 +8,6 @@ import Footer from "../components/Footer"
 import MatchGrid from "../components/MatchGrid"
 
 function Search() {
-  // State Management of API Fetch
   const [matchesBySearch, setMatchesBySearch] = useState([]);
   // State Management of Search Query
   const [query, setQuery] = useState("");
@@ -31,9 +30,7 @@ function Search() {
   async function handleSubmit(e) {
     e.preventDefault();
     setSearchedDate(query)
-    // Await the API Fetch
     try {
-      // use query as parameter for getMatches()
       const data = await getMatches(query);
       setMatchesBySearch(data);
     } catch (error) {
@@ -51,7 +48,6 @@ function Search() {
   return(
     <>
       <NavBar/>
-      
       <main>
         <div className="search-bar">
           <form className="search" onSubmit={handleSubmit}>
@@ -76,7 +72,6 @@ function Search() {
               <MatchGrid matches={sortedMatches}/>            
             </>
           )}
-
       </main>
       <Footer/>
     </>
