@@ -49,7 +49,6 @@ Parameters:
 {YYY-MM-DD} is the date to return events/matches occuring on that day  
 {16} is the unique tournment id used to return tournments matching `FIFA World Cup`  
 
-
 - `https://sportapi7.p.rapidapi.com/api/v1/unique-tournament/{16}/season/{58210}/standings/total`  
 
 Parameters:  
@@ -60,3 +59,7 @@ Endpoints:
 * `GET /unique-tournament/16/events-on-date?date=` —  Returns events object with full details of matches occuring =+-1 day of the given date  
 * `GET /unique-tournament/16/season/58210/standings/total` — Returns current tournament standings. For FIFA World Cup, it returns the standings of each of the 12 groups, including "rows" object with each team, wins, losses, draws, points and other details. It also returns an additional "Third-Place Teams" Group with rows.
 
+## Challenges
+- Styling. Opted to use CSS Flexbox and component-based CSS styling but it required a lot of investigation to get the desired visual aspect and responsive design to multiple devices.  
+- Countdown Clock incorporated into NavBar. The NavBar has a countdown clock which available until Jun 11 when the tournament kicked off. This required conditional rendering.
+- Timezone Differences. The API endpoints return +-1 day even with the date parameter, in order to account for multiple timezones. For example today's date could already be tomorrow in another part of the world. The API endpoint stores startTimestamp in UNIX, which required conversion in order to display. Parameters also required conversion to Date objects, filtering and sorting to return the correct matches for the date.
